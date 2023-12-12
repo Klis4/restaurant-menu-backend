@@ -1,0 +1,27 @@
+{
+  "compilerOptions": {
+    /* Visit https://aka.ms/tsconfig to read more about this file */
+    "target": "ES2018",
+    "lib": ["ES6"],
+    "module": "NodeNext",
+    "rootDir": "./src",
+    "resolveJsonModule": true,
+    "allowJs": true,
+    "outDir": "./build",
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    "strict": true,
+    "noImplicitAny": true,
+    "skipLibCheck": true,
+    "sourceMap": true,
+    "removeComments": true,
+    "experimentalDecorators": true
+  },
+  "include": ["src/**/*"],
+  "exclude": ["node_modules"],
+  "lib": ["ESNext"],
+  "ts-node": {
+    "esm": true
+  }
+
+}

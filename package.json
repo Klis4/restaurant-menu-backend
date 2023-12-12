@@ -1,0 +1,47 @@
+{
+  "name": "restaurant-menu-backend",
+  "version": "0.0.1",
+  "description": "Backend for Restaurant menu pet-project",
+  "main": "src/main.ts",
+  "type": "module",
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run lint"
+    }
+  },
+  "scripts": {
+    "dev": "npx nodemon",
+    "build": "rimraf ./build && npx tsc",
+    "run-build": "npm run build && node build/main",
+    "lint": "npx eslint ./src",
+    "format": "npx eslint ./src --fix",
+    "migrate-db": "npx prisma migrate"
+  },
+  "repository": {
+    "type": "git",
+    "url": "github.com:Klis4/restaurant-menu-backend.git"
+  },
+  "keywords": [
+    "api",
+    "server"
+  ],
+  "author": "klis4",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/node": "^20.10.4",
+    "@typescript-eslint/eslint-plugin": "^6.14.0",
+    "@typescript-eslint/parser": "^6.14.0",
+    "eslint": "^8.55.0",
+    "husky": "^8.0.3",
+    "nodemon": "^3.0.2",
+    "prettier": "^3.1.1",
+    "prisma": "^5.7.0",
+    "rimraf": "^5.0.5",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.3.3"
+  },
+  "dependencies": {
+    "@prisma/client": "^5.7.0",
+    "dot-env": "^0.0.1"
+  }
+}
