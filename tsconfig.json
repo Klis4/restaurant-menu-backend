@@ -3,7 +3,7 @@
     /* Visit https://aka.ms/tsconfig to read more about this file */
     "target": "ES2018",
     "lib": ["ES6"],
-    "module": "NodeNext",
+    "module": "ESNext",
     "rootDir": "./src",
     "resolveJsonModule": true,
     "allowJs": true,
@@ -12,16 +12,16 @@
     "forceConsistentCasingInFileNames": true,
     "strict": true,
     "noImplicitAny": true,
-    "skipLibCheck": true,
     "sourceMap": true,
     "removeComments": true,
-    "experimentalDecorators": true
+    "experimentalDecorators": true,
+    "moduleResolution": "Node",
   },
-  "include": ["src/**/*"],
+  "include": ["src/**/*.ts", "src/server.tsc"],
   "exclude": ["node_modules"],
   "lib": ["ESNext"],
   "ts-node": {
-    "esm": true
+    "esm": true,
+    "experimentalSpecifierResolution": "node",
   }
-
 }
