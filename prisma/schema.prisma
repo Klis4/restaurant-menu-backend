@@ -47,7 +47,6 @@ model Dish {
   category    Category @relation(fields: [categoryId], references: [id])
   name        String
   description String
-  pictureURL  String
-  composition Json
+  pictureURL  String?
   price       Float
 }
