@@ -14,38 +14,40 @@ enum UserRole {
   USER
   ADMIN
 }
+
 model User {
-  id    String  @id @default(uuid())
-  name  String
-  email String  @unique
-  password String
-  createdAt DateTime @default(now())
+  id          String        @id @default(uuid())
+  name        String
+  email       String        @unique
+  password    String
+  createdAt   DateTime      @default(now())
   accessCodes AccessCodes[]
-  role UserRole
+  role        UserRole
 }
 
 model AccessCodes {
-  id String @id @default(uuid())
-  userId String
-  user User @relation(fields: [userId], references: [id])
-  accessToken String 
-  accessExpiresAt DateTime
-  refreshToken String
+  id               String   @id @default(uuid())
+  userId           String
+  user             User     @relation(fields: [userId], references: [id])
+  accessToken      String
+  accessExpiresAt  DateTime
+  refreshToken     String
   refreshExpiresIn DateTime
 }
 
 model Category {
-  id Int @id @default(autoincrement())
-  name String @unique
+  id     String @id @default(uuid())
+  name   String @unique
   dishes Dish[]
 }
+
 model Dish {
-  id Int @id @default(autoincrement())
-  categoryId Int
-  category Category @relation(fields: [categoryId], references: [id])
-  name String
+  id          String   @id @default(uuid())
+  categoryId  String
+  category    Category @relation(fields: [categoryId], references: [id])
+  name        String
   description String
-  pictureURL String
+  pictureURL  String
   composition Json
-  price Float
+  price       Float
 }
